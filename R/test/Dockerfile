@@ -7,10 +7,10 @@ RUN apt-get update && apt-get install -y \
 
 RUN R -e "install.packages(c('tidyquant', 'plotly'), dependencies = TRUE, repos = 'https://packagemanager.rstudio.com/cran/latest')"
 
-RUN useradd rstudio
+#RUN useradd rstudio
 RUN echo "rstudio:rstudio" | chpasswd
 
-RUN mkdir /home/rstudio
+#RUN mkdir /home/rstudio
 RUN chown rstudio:rstudio /home/rstudio
 
 EXPOSE 8787
